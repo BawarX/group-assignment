@@ -1,3 +1,4 @@
+import 'package:darnafiz/screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class custom_nav_bar_ff extends StatelessWidget {
@@ -12,7 +13,7 @@ class custom_nav_bar_ff extends StatelessWidget {
       children: [
         Container(
           width: 400,
-          height: 60,
+          height: 55,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
@@ -25,16 +26,17 @@ class custom_nav_bar_ff extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.only(bottom: 7),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
+                    width: 60,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: Colors.white,
-                          width: 4,
+                          width: 3,
                         )),
                     child: FloatingActionButton(
                       backgroundColor: const Color.fromARGB(255, 0, 108, 113),
@@ -56,16 +58,26 @@ class custom_nav_bar_ff extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 10),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 7),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FavoriteScreen(),
+                        ),
+                      );
+                    },
+                    child: const Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                    ),
                   ),
-                  Text(
+                  const Text(
                     "Favorite",
                     style: TextStyle(color: Colors.white),
                   )
@@ -73,7 +85,7 @@ class custom_nav_bar_ff extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: 7),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -89,7 +101,7 @@ class custom_nav_bar_ff extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: 7),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

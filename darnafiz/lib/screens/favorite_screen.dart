@@ -1,6 +1,7 @@
 import 'package:darnafiz/screens/home_page.dart';
 import 'package:darnafiz/widget/card.dart';
 import 'package:darnafiz/widget/card_favorite.dart';
+import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteScreen extends StatefulWidget {
@@ -43,41 +44,46 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Dismissible(
-            key: ValueKey<int>(items.length),
-            background: Container(
-                color: Colors.red,
-                child: const Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(
-                        Icons.close,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'رەشکردن',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
+      body: Stack(
+        children: [
+          Container(
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Dismissible(
+                  key: ValueKey<int>(items.length),
+                  background: Container(
+                      color: Colors.red,
+                      child: const Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(
+                              Icons.close,
+                              color: Colors.white,
+                            ),
+                            Text(
+                              'رەشکردن',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                )),
-            // onDismissed: (DismissDirection direction) {
-            //   setState(() {
-            //     items.removeAt(index);
-            //   });
-            // },
-            child: const card_favorite(),
-          );
-        },
+                      )),
+                  child: const card_favorite(),
+                );
+              },
+            ),
+          ),
+          const Positioned(
+            child: custom_nav_bar_ff_favorite(),
+          ),
+        ],
       ),
+      // bottomNavigationBar: const custom_nav_bar_ff_favorite(),
     );
   }
 }

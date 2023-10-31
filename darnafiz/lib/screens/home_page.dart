@@ -5,7 +5,9 @@ import 'package:darnafiz/screens/user_screen.dart';
 import 'package:darnafiz/widget/card.dart';
 import 'package:darnafiz/widget/carouse_widget.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav.dart';
+import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
 import 'package:darnafiz/widget/drawer_button.dart';
+import 'package:darnafiz/widget/drawer_side.dart';
 import 'package:darnafiz/widget/row_spacer.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +29,8 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     double rowCardsHeight = 160;
+    double widthSpaceBetweenCards = 10;
+    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -86,13 +90,17 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(10),
+          scrollDirection: Axis.vertical,
+          child: SizedBox(
+            height: height,
             child: Column(
               children: [
+                const SizedBox(
+                  height: 10,
+                ),
                 const Custom_Carousel(),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
                   child: row_spacer(
                     rowHeader: 'Best Of Month',
                   ),
@@ -103,33 +111,39 @@ class _MainPageState extends State<MainPage> {
                     height: rowCardsHeight,
                     child: Row(
                       children: [
+                        const SizedBox(
+                          width: 13,
+                        ),
                         custom_card(
                           imgPath: 'assets/chad.jpeg',
                           fullName: 'Bawar ',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Diary',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                       ],
                     ),
                   ),
                 ),
-                row_spacer(
-                  rowHeader: 'New Members',
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
+                  child: row_spacer(
+                    rowHeader: 'New Members',
+                  ),
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -137,33 +151,43 @@ class _MainPageState extends State<MainPage> {
                     height: rowCardsHeight,
                     child: Row(
                       children: [
+                        const SizedBox(
+                          width: 13,
+                        ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                       ],
                     ),
                   ),
                 ),
-                row_spacer(
-                  rowHeader: 'Popular',
+                const Divider(
+                  color: Color.fromRGBO(238, 238, 238, 1),
+                  height: 0.5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
+                  child: row_spacer(
+                    rowHeader: 'Popular',
+                  ),
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -171,121 +195,44 @@ class _MainPageState extends State<MainPage> {
                     height: rowCardsHeight,
                     child: Row(
                       children: [
+                        const SizedBox(
+                          width: 13,
+                        ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                         custom_card(
                           fullName: 'Bawar Surdash',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
-                        const SizedBox(
-                          width: 8,
+                        SizedBox(
+                          width: widthSpaceBetweenCards,
                         ),
                       ],
                     ),
                   ),
+                ),
+                const Divider(
+                  color: Color.fromRGBO(238, 238, 238, 1),
+                  height: 0.5,
                 ),
               ],
             ),
           ),
         ),
-        drawer: Drawer(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                width: double.infinity,
-                height: 200,
-                color: const Color.fromARGB(255, 0, 108, 113),
-                child: const Padding(
-                  padding: EdgeInsets.only(top: 10),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage(
-                          'assets/guy_smiling.jpeg',
-                        ),
-                      ),
-                      Text(
-                        "ناو: هێمن کامەران هیوا",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        ":زماەەی مۆبایل  ٠٧٥٠٤٤٥٤٥٤٠",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "‌عراق/هەولێر",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          Icon(
-                            Icons.location_on,
-                            color: Colors.white,
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              drawer_button(
-                name: 'چوونە ژوورەوە',
-                iconData: Icons.add,
-              ),
-              drawer_button(
-                name: 'دەربارەی ئێمە',
-                iconData: Icons.add,
-              ),
-              drawer_button(
-                name: 'پەیوەندی کردن بە ئیمە',
-                iconData: Icons.add,
-              ),
-              const Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon(
-                      Icons.facebook,
-                      size: 60,
-                      color: Color.fromARGB(255, 0, 108, 113),
-                    ),
-                    Icon(
-                      Icons.class_,
-                      size: 60,
-                      color: Color.fromARGB(255, 0, 108, 113),
-                    ),
-                    Icon(
-                      Icons.snapchat_rounded,
-                      size: 60,
-                      color: Color.fromARGB(255, 0, 108, 113),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+        drawer: const Drawer(
+          child: drawer_side(),
         ),
         floatingActionButton: const custom_nav_bar_ff(),
       ),

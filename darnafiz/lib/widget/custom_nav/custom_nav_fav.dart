@@ -1,3 +1,4 @@
+import 'package:darnafiz/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 class custom_nav_bar_ff_favorite extends StatelessWidget {
@@ -29,6 +30,32 @@ class custom_nav_bar_ff_favorite extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainPage(),
+                        ),
+                      );
+                    },
+                    child: const Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const Text(
+                    "Home",
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
                   Container(
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
@@ -40,7 +67,7 @@ class custom_nav_bar_ff_favorite extends StatelessWidget {
                       backgroundColor: const Color.fromARGB(255, 0, 108, 113),
                       shape: const CircleBorder(),
                       child: const Icon(
-                        Icons.home,
+                        Icons.favorite,
                         size: 35,
                         color: Colors.white,
                       ),
@@ -48,26 +75,10 @@ class custom_nav_bar_ff_favorite extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "Home",
+                    "Favorite",
                     style: TextStyle(
                       color: Colors.white,
                     ),
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Favorite",
-                    style: TextStyle(color: Colors.white),
                   )
                 ],
               ),

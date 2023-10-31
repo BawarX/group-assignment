@@ -10,7 +10,7 @@ class Custom_Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(viewportFraction: 1, height: 130.0),
+      options: CarouselOptions(viewportFraction: 1, height: 150.0),
       items: [1, 2, 3, 4, 5].map((i) {
         return Builder(
           builder: (BuildContext context) {

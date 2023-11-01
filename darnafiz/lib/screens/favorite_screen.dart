@@ -15,7 +15,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     //final items = List<card_favorite>.generate(10, (index) => const card_favorite());
-    List<card_favorite> items = List<card_favorite>.generate(10, (int index) {
+    List<card_favorite> items = List<card_favorite>.generate(7, (int index) {
       return const card_favorite();
     });
     return Scaffold(
@@ -35,11 +35,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             icon: const Icon(Icons.menu),
             color: Colors.white,
           ),
-          title: const Text(
-            "Favorite",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+          title: const Padding(
+            padding: EdgeInsets.only(left: 90),
+            child: Text(
+              "Favorite",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -47,32 +50,38 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       body: Stack(
         children: [
           Container(
-            child: ListView.builder(
+            child: ListView.separated(
+              separatorBuilder: (BuildContext context, int index) {
+                return const SizedBox(
+                  height: 10,
+                );
+              },
               itemCount: items.length,
               itemBuilder: (BuildContext context, int index) {
                 return Dismissible(
                   key: ValueKey<int>(items.length),
                   background: Container(
-                      color: Colors.red,
-                      child: const Padding(
-                        padding: EdgeInsets.only(right: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(
-                              Icons.close,
+                    color: Colors.red,
+                    child: const Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Icons.close,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'رەشکردن',
+                            style: TextStyle(
+                              fontSize: 20,
                               color: Colors.white,
                             ),
-                            Text(
-                              'رەشکردن',
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   child: const card_favorite(),
                 );
               },

@@ -43,7 +43,7 @@ class custom_nav_bar_ff extends StatelessWidget {
                       shape: const CircleBorder(),
                       child: const Icon(
                         Icons.home,
-                        size: 35,
+                        size: 25,
                         color: Colors.white,
                       ),
                       onPressed: () {},

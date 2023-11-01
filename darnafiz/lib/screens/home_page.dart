@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(
-            50,
+            55,
           ),
           child: AppBar(
             backgroundColor: const Color.fromARGB(255, 0, 108, 113),

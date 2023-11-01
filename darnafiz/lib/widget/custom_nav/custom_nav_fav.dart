@@ -57,6 +57,7 @@ class custom_nav_bar_ff_favorite extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
+                    width: 60,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
@@ -68,7 +69,7 @@ class custom_nav_bar_ff_favorite extends StatelessWidget {
                       shape: const CircleBorder(),
                       child: const Icon(
                         Icons.favorite,
-                        size: 35,
+                        size: 25,
                         color: Colors.white,
                       ),
                       onPressed: () {},

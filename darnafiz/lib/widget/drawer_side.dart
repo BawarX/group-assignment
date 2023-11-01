@@ -74,7 +74,7 @@ class drawer_side extends StatelessWidget {
         const Divider(),
         const Expanded(
           child: Padding(
-            padding: EdgeInsets.only(bottom: 10),
+            padding: EdgeInsets.only(bottom: 15),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

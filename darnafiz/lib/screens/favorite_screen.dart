@@ -1,6 +1,6 @@
 import 'package:darnafiz/screens/home_page.dart';
-import 'package:darnafiz/widget/card.dart';
-import 'package:darnafiz/widget/card_favorite.dart';
+import 'package:darnafiz/widget/home_page/home_card.dart';
+import 'package:darnafiz/widget/favorite_screen/card_favorite.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,6 @@ class FavoriteScreen extends StatefulWidget {
 class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
-    //final items = List<card_favorite>.generate(10, (index) => const card_favorite());
     List<card_favorite> items = List<card_favorite>.generate(7, (int index) {
       return const card_favorite();
     });

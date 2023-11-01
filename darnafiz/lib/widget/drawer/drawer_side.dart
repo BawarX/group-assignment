@@ -1,6 +1,8 @@
-import 'package:darnafiz/widget/drawer_button.dart';
+import 'package:darnafiz/const/color.dart';
+import 'package:darnafiz/widget/drawer/drawer_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class drawer_side extends StatelessWidget {
   const drawer_side({
@@ -15,7 +17,7 @@ class drawer_side extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 200,
-          color: const Color.fromARGB(255, 0, 108, 113),
+          color: AppColors.kPrimaryColor,
           child: const Padding(
             padding: EdgeInsets.only(top: 10),
             child: Column(
@@ -33,7 +35,7 @@ class drawer_side extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  ":زماەەی مۆبایل  ٠٧٥٠٤٤٥٤٥٤٠",
+                  "زماەەی مۆبایل:  ٠٧٥٠٤٤٥٤٥٤٠",
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -64,12 +66,12 @@ class drawer_side extends StatelessWidget {
         const Divider(),
         drawer_button(
           name: 'دەربارەی ئێمە',
-          iconData: Icons.add,
+          iconData: Icons.supervised_user_circle,
         ),
         const Divider(),
         drawer_button(
           name: 'پەیوەندی کردن بە ئیمە',
-          iconData: Icons.add,
+          iconData: Icons.contact_page,
         ),
         const Divider(),
         const Expanded(
@@ -79,20 +81,32 @@ class drawer_side extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  Icons.facebook,
-                  size: 60,
-                  color: Color.fromARGB(255, 0, 108, 113),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: AppColors.kPrimaryColor,
+                  child: Icon(
+                    FontAwesomeIcons.facebook,
+                    size: 30,
+                    color: Colors.white,
+                  ),
                 ),
-                Icon(
-                  Icons.class_,
-                  size: 60,
-                  color: Color.fromARGB(255, 0, 108, 113),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: AppColors.kPrimaryColor,
+                  child: Icon(
+                    FontAwesomeIcons.instagram,
+                    size: 30,
+                    color: Colors.white,
+                  ),
                 ),
-                Icon(
-                  Icons.snapchat_rounded,
-                  size: 60,
-                  color: Color.fromARGB(255, 0, 108, 113),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: AppColors.kPrimaryColor,
+                  child: Icon(
+                    FontAwesomeIcons.snapchat,
+                    size: 30,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

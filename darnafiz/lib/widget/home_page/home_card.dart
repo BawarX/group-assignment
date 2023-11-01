@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class custom_card extends StatelessWidget {
-  custom_card({
+class home_card extends StatelessWidget {
+  home_card({
     required this.imgPath,
     required this.fullName,
     super.key,

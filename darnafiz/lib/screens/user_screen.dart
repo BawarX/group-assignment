@@ -1,5 +1,7 @@
+import 'package:darnafiz/const/color.dart';
 import 'package:darnafiz/screens/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -44,7 +46,7 @@ class _UserScreenState extends State<UserScreen> {
                     right: 0,
                     child: Container(
                       decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 0, 108, 113),
+                        color: AppColors.kPrimaryColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           bottomLeft: Radius.circular(20),
@@ -73,7 +75,7 @@ class _UserScreenState extends State<UserScreen> {
                       },
                       icon: const Icon(
                         Icons.arrow_back,
-                        color: Color.fromARGB(255, 0, 108, 113),
+                        color: AppColors.kPrimaryColor,
                       ),
                     ),
                   ),
@@ -203,11 +205,11 @@ class _UserScreenState extends State<UserScreen> {
                   children: [
                     Icon(
                       Icons.star,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                      color: AppColors.kPrimaryColor,
                     ),
                     Icon(
                       Icons.star,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                      color: AppColors.kPrimaryColor,
                     ),
                     Icon(
                       Icons.star_border,
@@ -215,11 +217,11 @@ class _UserScreenState extends State<UserScreen> {
                     ),
                     Icon(
                       Icons.star_border,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                      color: AppColors.kPrimaryColor,
                     ),
                     Icon(
                       Icons.star_border,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                      color: AppColors.kPrimaryColor,
                     ),
                   ],
                 ),
@@ -230,7 +232,7 @@ class _UserScreenState extends State<UserScreen> {
                   width: 100,
                   height: 30,
                   decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 0, 108, 113),
+                      color: AppColors.kPrimaryColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(15),
                       )),
@@ -261,32 +263,48 @@ class _UserScreenState extends State<UserScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Icon(
-                      Icons.facebook,
-                      size: 50,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Color.fromARGB(255, 0, 108, 113),
+                      child: Icon(
+                        FontAwesomeIcons.facebook,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
-                    Icon(
-                      Icons.tiktok,
-                      size: 50,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Color.fromARGB(255, 0, 108, 113),
+                      child: Icon(
+                        FontAwesomeIcons.instagram,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
-                    Icon(
-                      Icons.class_,
-                      size: 50,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Color.fromARGB(255, 0, 108, 113),
+                      child: Icon(
+                        FontAwesomeIcons.snapchat,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
-                    Icon(
-                      Icons.snapchat_rounded,
-                      size: 50,
-                      color: Color.fromARGB(255, 0, 108, 113),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: AppColors.kPrimaryColor,
+                      child: Icon(
+                        FontAwesomeIcons.tiktok,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
             const SizedBox(
-              height: 25,
+              height: 18,
             ),
             Expanded(
               child: Align(

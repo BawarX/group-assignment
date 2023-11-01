@@ -1,14 +1,15 @@
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
+import 'package:darnafiz/const/color.dart';
 import 'package:darnafiz/screens/favorite_screen.dart';
 import 'package:darnafiz/screens/user_screen.dart';
-import 'package:darnafiz/widget/card.dart';
-import 'package:darnafiz/widget/carouse_widget.dart';
+import 'package:darnafiz/widget/home_page/home_card.dart';
+import 'package:darnafiz/widget/home_page/carouse_widget.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
-import 'package:darnafiz/widget/drawer_button.dart';
-import 'package:darnafiz/widget/drawer_side.dart';
-import 'package:darnafiz/widget/row_spacer.dart';
+import 'package:darnafiz/widget/drawer/drawer_button.dart';
+import 'package:darnafiz/widget/drawer/drawer_side.dart';
+import 'package:darnafiz/widget/home_page/row_spacer.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MainPageState extends State<MainPage> {
             55,
           ),
           child: AppBar(
-            backgroundColor: const Color.fromARGB(255, 0, 108, 113),
+            backgroundColor: AppColors.kPrimaryColor,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(20),
@@ -62,7 +63,7 @@ class _MainPageState extends State<MainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FavoriteScreen(),
+                    builder: (context) => const UserScreen(),
                   ),
                 );
               },
@@ -73,14 +74,7 @@ class _MainPageState extends State<MainPage> {
             ),
             actions: [
               IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const UserScreen(),
-                    ),
-                  );
-                },
+                onPressed: () {},
                 icon: const Icon(
                   Icons.search,
                   color: Colors.white,
@@ -114,22 +108,22 @@ class _MainPageState extends State<MainPage> {
                         const SizedBox(
                           width: 13,
                         ),
-                        custom_card(
+                        home_card(
                           imgPath: 'assets/chad.jpeg',
-                          fullName: 'Bawar ',
+                          fullName: 'John',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Jack Hudson',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Diary',
+                        home_card(
+                          fullName: 'Larry',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
                         SizedBox(
@@ -154,22 +148,22 @@ class _MainPageState extends State<MainPage> {
                         const SizedBox(
                           width: 13,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Bawar',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Muhammad',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Muhaemn',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
                         SizedBox(
@@ -198,22 +192,22 @@ class _MainPageState extends State<MainPage> {
                         const SizedBox(
                           width: 13,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Mansen',
                           imgPath: 'assets/guy_smiling_2.jpg',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Banna',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
                         SizedBox(
                           width: widthSpaceBetweenCards,
                         ),
-                        custom_card(
-                          fullName: 'Bawar Surdash',
+                        home_card(
+                          fullName: 'Dragon',
                           imgPath: 'assets/guy_smiling.jpeg',
                         ),
                         SizedBox(

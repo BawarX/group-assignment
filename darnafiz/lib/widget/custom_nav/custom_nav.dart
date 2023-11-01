@@ -1,3 +1,4 @@
+import 'package:darnafiz/const/color.dart';
 import 'package:darnafiz/screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class custom_nav_bar_ff extends StatelessWidget {
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            color: Color.fromARGB(255, 0, 108, 113),
+            color: AppColors.kPrimaryColor,
           ),
         ),
         Row(
@@ -90,7 +91,7 @@ class custom_nav_bar_ff extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Icon(
-                    Icons.network_cell,
+                    Icons.language,
                     color: Colors.white,
                   ),
                   Text(
@@ -106,7 +107,7 @@ class custom_nav_bar_ff extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Icon(
-                    Icons.favorite,
+                    Icons.notifications_active,
                     color: Colors.white,
                   ),
                   Text(

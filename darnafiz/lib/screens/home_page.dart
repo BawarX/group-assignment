@@ -1,13 +1,12 @@
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
-import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
+
 import 'package:darnafiz/const/color.dart';
-import 'package:darnafiz/screens/favorite_screen.dart';
+
 import 'package:darnafiz/screens/user_screen.dart';
 import 'package:darnafiz/widget/home_page/home_card.dart';
 import 'package:darnafiz/widget/home_page/carouse_widget.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav.dart';
-import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
-import 'package:darnafiz/widget/drawer/drawer_button.dart';
+
 import 'package:darnafiz/widget/drawer/drawer_side.dart';
 import 'package:darnafiz/widget/home_page/row_spacer.dart';
 import 'package:flutter/material.dart';

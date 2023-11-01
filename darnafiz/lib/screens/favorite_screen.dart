@@ -1,5 +1,5 @@
 import 'package:darnafiz/screens/home_page.dart';
-import 'package:darnafiz/widget/home_page/home_card.dart';
+
 import 'package:darnafiz/widget/favorite_screen/card_favorite.dart';
 import 'package:darnafiz/widget/custom_nav/custom_nav_fav.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +91,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ),
         ],
       ),
-      // bottomNavigationBar: const custom_nav_bar_ff_favorite(),
     );
   }
 }
